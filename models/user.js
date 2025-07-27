@@ -1,7 +1,4 @@
-const mongoose=require('mongoose')
-require('dotenv').config({ path: '../.env' });
-
-mongoose.connect(process.env.DATABASE_URL)
+const mongoose = require('./db');
 
 let userSchema= mongoose.Schema({
     name:String,

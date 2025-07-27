@@ -1,6 +1,4 @@
-const mongoose=require('mongoose')
-
-mongoose.connect('mongodb+srv://vinaysemwal392:yoJQwedQurx6cY19@myproject1.bnmyhii.mongodb.net')
+const mongoose = require('./db');
 
 let postSchema= mongoose.Schema({
     content:String,
