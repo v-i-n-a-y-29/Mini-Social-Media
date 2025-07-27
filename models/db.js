@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
-require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
 
 const dbURI = process.env.DATABASE_URL;
 
 if (!dbURI) {
-  console.error('Error: DATABASE_URL is not defined in .env file');
+  console.error('Error: DATABASE_URL is not defined. Check your .env file or Vercel environment variables.');
   process.exit(1);
 }
 

@@ -5,10 +5,12 @@ const cookieparser=require('cookie-parser')
 const userModel=require('./models/user')
 const postModel=require('./models/post')
 const bcrypt=require('bcrypt')
+const path = require('path');
 const jwt=require('jsonwebtoken')
 const post = require('./models/post')
 
 app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cookieparser())
