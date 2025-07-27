@@ -95,11 +95,9 @@ Mini-Social-Media/ ├── models/ │ ├── post.js │ └── user.js
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgements
+
 
 - [Express.js](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
