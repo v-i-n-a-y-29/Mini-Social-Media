@@ -14,93 +14,123 @@
     }
     
     .gradient-bg {
-      background: linear-gradient(to right, #111827, #1f2937);
+      background-color: #f0f4f8;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
     
     .btn-primary {
       transition: all 0.2s ease;
-      background: linear-gradient(to right, #3B82F6, #2563EB);
-      box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.4);
+      background-color: #4d9de0;
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 4px 0 #3d7db2;
+      position: relative;
+      top: 0;
     }
     
     .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 10px -1px rgba(59, 130, 246, 0.5);
+      top: -2px;
+      box-shadow: 0 6px 0 #3d7db2;
+    }
+    
+    .btn-primary:active {
+      top: 2px;
+      box-shadow: 0 2px 0 #3d7db2;
     }
     
     .btn-danger {
       transition: all 0.2s ease;
-      background: linear-gradient(to right, #EF4444, #DC2626);
-      box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.4);
+      background-color: #E95F71;
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 4px 0 #C64B5B;
+      position: relative;
+      top: 0;
     }
     
     .btn-danger:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 10px -1px rgba(239, 68, 68, 0.5);
+      top: -2px;
+      box-shadow: 0 6px 0 #C64B5B;
+    }
+    
+    .btn-danger:active {
+      top: 2px;
+      box-shadow: 0 2px 0 #C64B5B;
     }
     
     .btn-warning {
       transition: all 0.2s ease;
-      background: linear-gradient(to right, #F59E0B, #D97706);
-      box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.4);
+      background-color: #FFB84D;
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 4px 0 #E59B35;
+      position: relative;
+      top: 0;
     }
     
     .btn-warning:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 10px -1px rgba(245, 158, 11, 0.5);
+      top: -2px;
+      box-shadow: 0 6px 0 #E59B35;
+    }
+    
+    .btn-warning:active {
+      top: 2px;
+      box-shadow: 0 2px 0 #E59B35;
     }
     
     .card {
-      backdrop-filter: blur(16px) saturate(180%);
-      background-color: rgba(31, 41, 55, 0.75);
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.125);
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      background-color: white;
+      border-radius: 16px;
+      border: 2px solid #4d9de0;
+      box-shadow: 6px 6px 0 rgba(77, 157, 224, 0.4);
+      transition: all 0.2s ease;
     }
     
     .textarea-field {
       transition: all 0.2s ease;
-      border: 2px solid #374151;
+      border: 2px solid #dde5ed;
+      background-color: white;
+      border-radius: 12px;
       resize: none;
     }
     
     .textarea-field:focus {
-      border-color: #F59E0B;
-      box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.3);
-      transform: translateY(-2px);
+      border-color: #FFB84D;
+      box-shadow: 0 0 0 2px rgba(255, 184, 77, 0.3);
+      outline: none;
     }
   </style>
 </head>
-<body class="gradient-bg min-h-screen text-white">
+<body class="gradient-bg min-h-screen text-gray-800">
   <div class="max-w-4xl mx-auto p-6 animate__animated animate__fadeIn">
     <div class="flex justify-between items-center mb-8 p-4 card animate__animated animate__slideInDown">
-      <h1 class="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-600">
+      <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
         Edit Post
       </h1>
       <div class="flex space-x-3">
-        <a href="/profile" class="btn-primary px-4 py-2 rounded-lg text-sm font-medium animate__animated animate__fadeIn">Profile</a>
-        <a href="/logout" class="btn-danger px-4 py-2 rounded-lg text-sm font-medium animate__animated animate__fadeIn animate__delay-1s">Logout</a>
+        <a href="/profile" class="btn-primary px-4 py-2 text-sm font-medium text-white animate__animated animate__fadeIn">Profile</a>
+        <a href="/logout" class="btn-danger px-4 py-2 text-sm font-medium text-white animate__animated animate__fadeIn animate__faster">Logout</a>
       </div>
     </div>
     
-    <div class="card p-6 animate__animated animate__fadeInUp animate__delay-1s">
+    <div class="card p-6 animate__animated animate__fadeInUp animate__faster">
       <form action="/update/<%=post._id%>" method="post">
         <div class="mb-4">
-          <label class="block text-yellow-400 mb-2 text-sm font-medium">Update your post</label>
+          <label class="block text-gray-700 mb-2 text-sm font-medium">Update your post</label>
           <textarea
             name="content"
             placeholder="What's on your mind?"
-            class="w-full bg-gray-800/50 textarea-field rounded-lg p-4 text-white placeholder-gray-400 outline-none min-h-[150px]"
+            class="w-full textarea-field p-4 text-gray-700 placeholder-gray-500 min-h-[150px]"
             required
           ><%=post.content%></textarea>
         </div>
         <div class="flex justify-between">
-          <a href="/profile" class="px-6 py-2 rounded-lg border border-gray-600 text-gray-300 hover:text-white transition-colors">
+          <a href="/profile" class="px-6 py-2 rounded-lg border-2 border-gray-300 text-gray-600 hover:border-gray-400 transition-colors">
             Cancel
           </a>
           <button
             type="submit"
-            class="btn-warning px-6 py-2 rounded-lg text-white font-medium inline-flex items-center animate__animated animate__pulse animate__infinite animate__slow"
+            class="btn-warning px-6 py-2 text-white font-medium inline-flex items-center animate__animated animate__pulse animate__infinite animate__slow"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />

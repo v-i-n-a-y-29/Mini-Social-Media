@@ -14,43 +14,61 @@
     }
     
     .gradient-bg {
-      background: linear-gradient(to right, #111827, #1f2937);
+      background-color: #eef2f7;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
     
     .btn-primary {
       transition: all 0.2s ease;
-      background: linear-gradient(to right, #3B82F6, #2563EB);
-      box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.4);
+      background-color: #4d9de0;
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 4px 0 #3d7db2;
+      position: relative;
+      top: 0;
     }
     
     .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 10px -1px rgba(59, 130, 246, 0.5);
+      top: -2px;
+      box-shadow: 0 6px 0 #3d7db2;
+    }
+    
+    .btn-primary:active {
+      top: 2px;
+      box-shadow: 0 2px 0 #3d7db2;
     }
     
     .btn-danger {
       transition: all 0.2s ease;
-      background: linear-gradient(to right, #EF4444, #DC2626);
-      box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.4);
+      background-color: #E95F71;
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 4px 0 #C64B5B;
+      position: relative;
+      top: 0;
     }
     
     .btn-danger:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 10px -1px rgba(239, 68, 68, 0.5);
+      top: -2px;
+      box-shadow: 0 6px 0 #C64B5B;
+    }
+    
+    .btn-danger:active {
+      top: 2px;
+      box-shadow: 0 2px 0 #C64B5B;
     }
     
     .card {
-      backdrop-filter: blur(16px) saturate(180%);
-      background-color: rgba(31, 41, 55, 0.75);
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.125);
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      background-color: white;
+      border-radius: 20px;
+      border: 2px solid #4d9de0;
+      box-shadow: 6px 6px 0 rgba(77, 157, 224, 0.3);
       transition: all 0.2s ease;
     }
     
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+      transform: translateY(-3px);
+      box-shadow: 8px 8px 0 rgba(77, 157, 224, 0.4);
     }
     
     .post-appear {
@@ -81,40 +99,40 @@
     }
   </style>
 </head>
-<body class="gradient-bg min-h-screen text-white p-6">
+<body class="gradient-bg min-h-screen text-gray-800 p-6">
   <div class="max-w-4xl mx-auto animate__animated animate__fadeIn">
-    <div class="flex justify-between items-center mb-8 p-4 card animate__animated animate__slideInDown">
-      <h1 class="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
+    <div class="flex justify-between items-center mb-8 p-4 animate__animated animate__slideInDown">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800">
         Mini Social Feed
       </h1>
       <div class="flex space-x-3">
-        <a href="/profile" class="btn-primary px-4 py-2 rounded-lg text-sm font-medium animate__animated animate__fadeIn">Profile</a>
-        <a href="/logout" class="btn-danger px-4 py-2 rounded-lg text-sm font-medium animate__animated animate__fadeIn animate__delay-1s">Logout</a>
+        <a href="/profile" class="btn-primary px-6 py-2 text-white font-medium animate__animated animate__fadeIn">Profile</a>
+        <a href="/logout" class="btn-danger px-6 py-2 text-white font-medium animate__animated animate__fadeIn animate__faster">Logout</a>
       </div>
     </div>
     
     <div class="posts space-y-6">
       <% posts.forEach(function(post, index) { %>
-        <div class="card p-5 post-appear" style="animation-delay: <%= index * 0.1 %>s;">
+        <div class="card p-6 post-appear">
           <div class="flex items-center mb-3">
-            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-lg">
               <%= post.user.username.charAt(0).toUpperCase() %>
             </div>
-            <div class="ml-3">
-              <h3 class="text-lg font-semibold text-blue-400">@<%= post.user.username %></h3>
+            <div class="ml-4">
+              <h3 class="text-lg font-semibold text-gray-700">@<%= post.user.username %></h3>
             </div>
           </div>
           
-          <p class="text-gray-200 text-lg mb-4 leading-relaxed"><%= post.content %></p>
+          <p class="text-gray-700 text-lg mb-5 leading-relaxed"><%= post.content %></p>
           
-          <div class="flex items-center justify-between mt-2 pt-3 border-t border-gray-700">
+          <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-200">
             <div class="flex items-center space-x-2">
-              <span class="like-count bg-gray-800 px-3 py-1 rounded-full text-sm">
+              <span class="like-count bg-blue-100 text-blue-800 px-4 py-1 rounded-full text-sm font-medium">
                 <%= post.like.length %> likes
               </span>
             </div>
-            <a href="/home/like/<%= post._id %>" class="like-button flex items-center px-3 py-1 rounded-lg text-sm <%= post.like.indexOf(user.userid) == -1 ? 'text-blue-400 hover:text-blue-300' : 'text-pink-500 hover:text-pink-400' %>">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="<%= post.like.indexOf(user.userid) == -1 ? 'none' : 'currentColor' %>" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <a href="/home/like/<%= post._id %>" class="like-button flex items-center px-4 py-2 rounded-lg text-sm font-medium <%= post.like.indexOf(user.userid) == -1 ? 'text-blue-600 hover:text-blue-700' : 'text-pink-500 hover:text-pink-600' %>">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="<%= post.like.indexOf(user.userid) == -1 ? 'none' : 'currentColor' %>" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
               <%= post.like.indexOf(user.userid) == -1 ? "Like" : "Unlike" %>
@@ -126,14 +144,16 @@
   </div>
   
   <script>
-    // Staggered animation for posts
+    // Add staggered animation for posts
     document.addEventListener('DOMContentLoaded', function() {
       const posts = document.querySelectorAll('.post-appear');
       
       posts.forEach((post, index) => {
+        post.style.opacity = '0';
         setTimeout(() => {
           post.classList.add('animate__animated', 'animate__fadeInUp');
-        }, index * 100);
+          post.style.opacity = '1';
+        }, index * 150);
       });
     });
   </script>
