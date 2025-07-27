@@ -3,17 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tailwind EJS Test</title>
+  <title>Mini Social - Login</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(to right, #111827, #1f2937);
+    }
+    
+    .input-field {
+      transition: all 0.3s ease;
+      border: 2px solid #374151;
+    }
+    
+    .input-field:focus {
+      border-color: #3B82F6;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .btn-primary {
+      transition: all 0.3s ease;
+      background: linear-gradient(to right, #3B82F6, #2563EB);
+      box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.4);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px -1px rgba(59, 130, 246, 0.5);
+    }
+    
+    .form-container {
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .card {
+      backdrop-filter: blur(16px) saturate(180%);
+      background-color: rgba(17, 25, 40, 0.75);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.125);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+  </style>
 </head>
-<body >
-  <div class="w-full h-screen bg-zinc-900 text-white p-10">
-    <h1 class="text-3xl tracking-tighter mb-5">Login to Account</h1>
-    <form action="/login" method="post">
-      <input class="px-3 py-2 bg-transparent outline-none border-2 border-zinc-800 rounded-md " type="email" name="email" id="" placeholder="email">
-      <input class="px-3 py-2 bg-transparent outline-none border-2 border-zinc-800 rounded-md " type="password" name="password" id="" placeholder="password">
-      <input class="px-6 py-2 bg-blue-500 rounded-md" type="submit" value="LogIn" id="">
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4">
+  <div class="w-full max-w-md form-container card p-8 animate__animated animate__fadeIn">
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-white mb-2 animate__animated animate__fadeInDown">Welcome Back</h1>
+      <p class="text-blue-300 animate__animated animate__fadeInUp animate__delay-1s">Sign in to your account</p>
+    </div>
+    
+    <form action="/login" method="post" class="space-y-4">
+      <div class="animate__animated animate__fadeInLeft animate__delay-1s">
+        <input class="w-full px-4 py-3 rounded-lg input-field bg-gray-800/50 text-white placeholder-gray-400 outline-none" 
+               type="email" name="email" placeholder="Email Address" required>
+      </div>
+      
+      <div class="animate__animated animate__fadeInRight animate__delay-2s">
+        <input class="w-full px-4 py-3 rounded-lg input-field bg-gray-800/50 text-white placeholder-gray-400 outline-none" 
+               type="password" name="password" placeholder="Password" required>
+      </div>
+      
+      <div class="animate__animated animate__fadeInUp animate__delay-3s">
+        <button type="submit" class="w-full py-3 rounded-lg btn-primary text-white font-medium hover:bg-blue-700 focus:outline-none">
+          Sign In
+        </button>
+      </div>
     </form>
+    
+    <div class="mt-8 text-center animate__animated animate__fadeInUp animate__delay-4s">
+      <p class="text-gray-400">Don't have an account?</p>
+      <a href="/" class="block w-full mt-3 py-3 rounded-lg btn-primary text-white font-medium text-center">
+        Create Account
+      </a>
+    </div>
   </div>
 </body>
 </html>
