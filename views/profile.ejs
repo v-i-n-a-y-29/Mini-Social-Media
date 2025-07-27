@@ -18,7 +18,7 @@
     }
     
     .btn-primary {
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       background: linear-gradient(to right, #3B82F6, #2563EB);
       box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.4);
     }
@@ -29,7 +29,7 @@
     }
     
     .btn-danger {
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       background: linear-gradient(to right, #EF4444, #DC2626);
       box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.4);
     }
@@ -40,7 +40,7 @@
     }
     
     .btn-warning {
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       background: linear-gradient(to right, #F59E0B, #D97706);
       box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.4);
     }
@@ -56,7 +56,7 @@
       border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.125);
       box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
     }
     
     .card:hover {
@@ -65,7 +65,7 @@
     }
     
     .textarea-field {
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       border: 2px solid #374151;
       resize: none;
     }
@@ -79,7 +79,7 @@
     .post-appear {
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeInUp 0.6s ease-out forwards;
+      animation: fadeInUp 0.4s ease-out forwards;
     }
     
     @keyframes fadeInUp {
@@ -180,7 +180,7 @@
       posts.forEach((post, index) => {
         setTimeout(() => {
           post.classList.add('animate__animated', 'animate__fadeInUp');
-        }, index * 150);
+        }, index * 100);
       });
     });
   </script>
