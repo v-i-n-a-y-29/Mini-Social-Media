@@ -79,7 +79,7 @@ app.post('/register', async (req,res)=>{
                 age:age,
                 password:hash
             })
-            let token=jwt.sign({email:email,userid:user._id},"shhhh")
+            let token=jwt.sign({email:email,userid:user._id}, process.env.JWT_SECRET)
             res.cookie('token',token)
             res.redirect('/login')
         })
