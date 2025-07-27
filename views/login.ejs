@@ -14,29 +14,41 @@
     }
     
     .gradient-bg {
-      background: linear-gradient(to right, #111827, #1f2937);
+      background-color: #f0f4f8;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
     
     .input-field {
       transition: all 0.2s ease;
-      border: 2px solid #374151;
+      border: 2px solid #dde5ed;
+      background-color: white;
+      border-radius: 12px;
     }
     
     .input-field:focus {
-      border-color: #3B82F6;
-      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+      border-color: #4d9de0;
+      box-shadow: 0 0 0 2px rgba(77, 157, 224, 0.3);
       transform: translateY(-2px);
     }
     
     .btn-primary {
       transition: all 0.2s ease;
-      background: linear-gradient(to right, #3B82F6, #2563EB);
-      box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.4);
+      background-color: #4d9de0;
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 4px 0 #3d7db2;
+      position: relative;
+      top: 0;
     }
     
     .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 10px -1px rgba(59, 130, 246, 0.5);
+      top: -2px;
+      box-shadow: 0 6px 0 #3d7db2;
+    }
+    
+    .btn-primary:active {
+      top: 2px;
+      box-shadow: 0 2px 0 #3d7db2;
     }
     
     .form-container {
@@ -49,42 +61,41 @@
     }
     
     .card {
-      backdrop-filter: blur(16px) saturate(180%);
-      background-color: rgba(17, 25, 40, 0.75);
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.125);
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      background-color: white;
+      border-radius: 20px;
+      border: 3px solid #4d9de0;
+      box-shadow: 8px 8px 0 rgba(77, 157, 224, 0.5);
     }
   </style>
 </head>
 <body class="gradient-bg min-h-screen flex items-center justify-center p-4">
   <div class="w-full max-w-md form-container card p-8 animate__animated animate__fadeIn">
     <div class="text-center mb-8">
-      <h1 class="text-4xl font-bold text-white mb-2 animate__animated animate__fadeInDown">Welcome Back</h1>
-      <p class="text-blue-300 animate__animated animate__fadeInUp animate__faster">Sign in to your account</p>
+      <h1 class="text-5xl font-bold text-gray-800 mb-2 animate__animated animate__fadeInDown">Welcome Back!</h1>
+      <p class="text-gray-600 animate__animated animate__fadeInUp animate__faster">Sign in to your account</p>
     </div>
     
     <form action="/login" method="post" class="space-y-4">
       <div class="animate__animated animate__fadeInLeft animate__faster">
-        <input class="w-full px-4 py-3 rounded-lg input-field bg-gray-800/50 text-white placeholder-gray-400 outline-none" 
+        <input class="w-full px-4 py-3 input-field text-gray-700 placeholder-gray-500 outline-none" 
                type="email" name="email" placeholder="Email Address" required>
       </div>
       
       <div class="animate__animated animate__fadeInRight animate__faster">
-        <input class="w-full px-4 py-3 rounded-lg input-field bg-gray-800/50 text-white placeholder-gray-400 outline-none" 
+        <input class="w-full px-4 py-3 input-field text-gray-700 placeholder-gray-500 outline-none" 
                type="password" name="password" placeholder="Password" required>
       </div>
       
       <div class="animate__animated animate__fadeInUp animate__faster">
-        <button type="submit" class="w-full py-3 rounded-lg btn-primary text-white font-medium hover:bg-blue-700 focus:outline-none">
+        <button type="submit" class="w-full py-3 btn-primary text-white font-medium focus:outline-none">
           Sign In
         </button>
       </div>
     </form>
     
     <div class="mt-8 text-center animate__animated animate__fadeInUp">
-      <p class="text-gray-400">Don't have an account?</p>
-      <a href="/" class="block w-full mt-3 py-3 rounded-lg btn-primary text-white font-medium text-center">
+      <p class="text-gray-600">Don't have an account?</p>
+      <a href="/" class="block w-full mt-3 py-3 btn-primary text-white font-medium text-center">
         Create Account
       </a>
     </div>
